@@ -35,8 +35,8 @@ Item {
     }
 
     component WorkspaceAssets: QtObject {
-        readonly property color inactiveColor: Colours.palette.m3outlineVariant
-        readonly property color activeColor: Colours.palette.m3onSurface
+        readonly property color inactiveColor: Appearance.color.palette.mutedForeground
+        readonly property color activeColor: Appearance.color.palette.foreground
 
         // Make all labels single-digit
         function getLabel(): string {

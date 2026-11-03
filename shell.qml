@@ -3,7 +3,7 @@ import Quickshell
 import QtQuick
 
 ShellRoot {
-    settings.watchFiles: false
+    settings.watchFiles: true
 
     Scope {
         Variants {

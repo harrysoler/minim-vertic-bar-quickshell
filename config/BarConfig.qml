@@ -3,6 +3,7 @@ import QtQuick
 QtObject {
     readonly property bool persistent: true
     readonly property Workspaces workspaces: Workspaces {}
+    readonly property int horizontalPadding: Appearance.padding.small
 
     component Workspaces: QtObject {
         readonly property int shown: 10

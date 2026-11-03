@@ -9,7 +9,7 @@ Text {
 
     renderType: Text.NativeRendering
     textFormat: Text.PlainText
-    color: Colours.palette.m3onSurface
+    color: Appearance.color.palette.foreground
     font.family: Appearance.font.family.sans
     font.pointSize: Appearance.font.size.smaller
 }

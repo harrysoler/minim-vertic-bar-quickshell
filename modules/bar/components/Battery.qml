@@ -46,7 +46,7 @@ Loader {
         }
 
         Layout.alignment: Qt.AlignCenter
-        color: Colours.palette.m3onBackground
+        color: Appearance.color.palette.foreground
         font.family: Appearance.font.family.mono
         font.pointSize: Appearance.font.size.small
     }

@@ -6,17 +6,26 @@ import QtQuick
 Singleton {
     id: root
 
-    readonly property Rounding rounding: Rounding {}
     readonly property Spacing spacing: Spacing {}
     readonly property Padding padding: Padding {}
     readonly property Font font: Font {}
     readonly property Anim anim: Anim {}
+    readonly property Color color: Color {}
 
-    component Rounding: QtObject {
-        readonly property int small: 12
-        readonly property int normal: 17
-        readonly property int large: 25
-        readonly property int full: 1000
+    component Color: QtObject {
+        readonly property Palette palette: Palette {}
+        readonly property real transparency: 0.9
+
+        function withTransparency(c: color): color {
+            return Qt.rgba(c.r, c.g, c.b, transparency)
+        }
+    }
+
+    component Palette: QtObject {
+        readonly property color background: "#1a1b26"
+        readonly property color foreground: "#c0caf5"
+        readonly property color mutedForeground: "#565f89"
+        readonly property color primary: "#7aa2f7"
     }
 
     component Spacing: QtObject {
@@ -55,6 +64,11 @@ Singleton {
         readonly property FontSize size: FontSize {}
     }
 
+    component Anim: QtObject {
+        readonly property AnimCurves curves: AnimCurves {}
+        readonly property AnimDurations durations: AnimDurations {}
+    }
+
     component AnimCurves: QtObject {
         readonly property list<real> emphasized: [0.05, 0, 2 / 15, 0.06, 1 / 6, 0.4, 5 / 24, 0.82, 0.25, 1, 1, 1]
         readonly property list<real> emphasizedAccel: [0.3, 0, 0.8, 0.15, 1, 1]
@@ -75,10 +89,5 @@ Singleton {
         readonly property int expressiveFastSpatial: 350
         readonly property int expressiveDefaultSpatial: 500
         readonly property int expressiveEffects: 200
-    }
-
-    component Anim: QtObject {
-        readonly property AnimCurves curves: AnimCurves {}
-        readonly property AnimDurations durations: AnimDurations {}
     }
 }

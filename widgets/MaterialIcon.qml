@@ -3,13 +3,12 @@ import qs.config
 
 StyledText {
     property real fill
-    property int grade: Colours.light ? 0 : -25
 
     font.family: Appearance.font.family.material
     font.pointSize: Appearance.font.size.small
     font.variableAxes: ({
         FILL: fill.toFixed(1),
-        GRAD: grade,
+        GRAD: 0,
         opsz: fontInfo.pixelSize,
         wght: fontInfo.weight
     })

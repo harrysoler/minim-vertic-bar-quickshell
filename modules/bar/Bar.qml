@@ -28,14 +28,14 @@ PanelWindow {
     readonly property int spacing: Appearance.spacing.normal
 
     readonly property int verticalPadding: Appearance.padding.normal
-    readonly property int horizontalPadding: Config.border.thickness
+    readonly property int horizontalPadding: Config.bar.horizontalPadding
 
     exclusiveZone: root.implicitWidth
     implicitWidth: maxColumnsImplicitWidth + horizontalPadding * 2
 
     aboveWindows: false
 
-    color: Colours.withAlpha(Colours.palette.m3background, false)
+    color: Appearance.color.withTransparency(Appearance.color.palette.background)
 
     TopColumn {
         id: top

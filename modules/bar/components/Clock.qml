@@ -21,8 +21,9 @@ ColumnLayout {
 
     component ClockText: Text {
         Layout.alignment: Qt.AlignCenter
-        color: Colours.palette.m3onBackground
+        color: Appearance.color.palette.foreground
         font.family: Appearance.font.family.mono
+        // TODO: Redefine sizes, small must be normal
         font.pointSize: Appearance.font.size.small
     }
 }

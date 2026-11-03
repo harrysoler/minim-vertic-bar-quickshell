@@ -18,7 +18,7 @@ StyledRect {
     implicitWidth: indicatorWidth
     implicitHeight: workspaceButtonHeight
 
-    color: Colours.palette.m3primary
+    color: Appearance.color.palette.primary
 
     Behavior on offset {
         NumberAnimation {
