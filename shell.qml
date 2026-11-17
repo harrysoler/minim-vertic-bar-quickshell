@@ -1,4 +1,5 @@
 import qs.modules.bar
+import qs.modules.notifications
 import Quickshell
 import QtQuick
 
@@ -11,5 +12,7 @@ ShellRoot {
 
             Bar {}
         }
+
+        Notifications {}
     }
 }

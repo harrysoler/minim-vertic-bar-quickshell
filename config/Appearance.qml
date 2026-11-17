@@ -26,6 +26,7 @@ Singleton {
         readonly property color foreground: "#c0caf5"
         readonly property color mutedForeground: "#565f89"
         readonly property color primary: "#7aa2f7"
+        readonly property color alert: "#ff7b72"
     }
 
     component Spacing: QtObject {
@@ -45,8 +46,8 @@ Singleton {
     }
 
     component FontSize: QtObject {
+        readonly property int smaller: 8
         readonly property int small: 10
-        readonly property int smaller: 12
         readonly property int normal: 13
         readonly property int larger: 15
         readonly property int large: 18
