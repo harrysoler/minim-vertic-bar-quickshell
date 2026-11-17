@@ -34,15 +34,17 @@ Loader {
         ]
         readonly property string currentIcon: rangeIcons[Math.floor(root.percentage / 0.142)]
 
-        property bool isBatteryLow: root.percentage < 0.2
+        property bool isBatteryLow: root.percentage <= 0.2
 
         text: root.isCharging ? "bolt" : currentIcon
+        color: isBatteryLow ? Appearance.color.palette.alert : Appearance.color.palette.foreground
+        opacity: 1
         fill: 1
 
         Layout.alignment: Qt.AlignCenter
 
         SequentialAnimation on opacity {
-            running: isBatteryLow || root.isCharging
+            running: isBatteryLow && !root.isCharging
             loops: Animation.Infinite
 
             NumberAnimation { to: 0.0; duration: 0 }
