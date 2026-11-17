@@ -34,10 +34,23 @@ Loader {
         ]
         readonly property string currentIcon: rangeIcons[Math.floor(root.percentage / 0.142)]
 
+        property bool isBatteryLow: root.percentage < 0.2
+
         text: root.isCharging ? "bolt" : currentIcon
         fill: 1
 
         Layout.alignment: Qt.AlignCenter
+
+        SequentialAnimation on opacity {
+            running: isBatteryLow || root.isCharging
+            loops: Animation.Infinite
+
+            NumberAnimation { to: 0.0; duration: 0 }
+            PauseAnimation { duration: 500 }
+            NumberAnimation { to: 1.0; duration: 0 }
+            PauseAnimation { duration: 500 }
+        }
+
     }
 
     component BatteryText: StyledText {
